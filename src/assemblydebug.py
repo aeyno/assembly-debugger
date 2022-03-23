@@ -2,7 +2,7 @@
 import sys
 import os
 import lldb
-from lldb import SBTarget, SBValue, SBStringList, SBFileSpecList, SBProcess
+from lldb import SBTarget, SBValue, SBProcess
 
 
 def print_registers(register_set):
