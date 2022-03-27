@@ -2,7 +2,7 @@
 import sys
 import os
 import lldb
-from lldb import SBTarget, SBValue, SBProcess
+from lldb import SBTarget, SBValue, SBProcess, SBThread, SBFrame
 
 
 def print_registers(register_set):
@@ -41,10 +41,10 @@ if __name__ == "__main__":
         bp_counter += 1
         print(f"process: {process}")
 
-        thread = process.GetThreadAtIndex(0)
+        thread : SBThread = process.GetSelectedThread()
         print(f"thread: {thread}")
 
-        frame = thread.GetFrameAtIndex(0)
+        frame : SBFrame = thread.GetSelectedFrame()
         print(f"frame: {frame}")
 
         print("\n>>>>>>> REGISTERS DUMP <<<<<<<<")
